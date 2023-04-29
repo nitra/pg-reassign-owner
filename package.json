@@ -1,0 +1,25 @@
+{
+  "name": "nitra-reassign-owner",
+  "description": "reassign-owner helper",
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "npm"
+  ],
+  "bugs": "https://github.com/nitra/reassign-owner/issues",
+  "homepage": "https://github.com/nitra/reassign-owner",
+  "prettier": "@nitra/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@nitra"
+    ],
+    "root": true
+  },
+  "devDependencies": {
+    "@nitra/cspell-dict": "^1.0.70",
+    "@nitra/eslint-config": "^1.0.24",
+    "@nitra/prettier-config": "^1.0.1"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@3.5.0"
+}

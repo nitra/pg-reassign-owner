@@ -1,0 +1,27 @@
+{
+  "name": "@nitra/reassign-owner",
+  "description": "reassign-owner helper",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "bin": "./src/index.js",
+  "keywords": [
+    "nitra",
+    "reassign-owner"
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitra/reassign-owner.git"
+  },
+  "bugs": "https://github.com/nitra/reassign-owner/issues",
+  "homepage": "https://github.com/nitra/reassign-owner",
+  "license": "MIT"
+}
