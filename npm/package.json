@@ -1,14 +1,12 @@
 {
   "name": "@nitra/pg-reassign-owner",
   "description": "reassign-owner helper",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "files": [
-    "src"
+    "bin"
   ],
-  "bin": {
-    "@nitra/pg-reassign-owner": "src/index.js"
-  },
+  "bin": "bin/index.js",
   "keywords": [
     "nitra",
     "pg-reassign-owner"

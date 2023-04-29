@@ -108,18 +108,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nitra/pg-reassign-owner@workspace:npm":
+  version: 0.0.0-use.local
+  resolution: "@nitra/pg-reassign-owner@workspace:npm"
+  bin:
+    pg-reassign-owner: src/index.js
+  languageName: unknown
+  linkType: soft
+
 "@nitra/prettier-config@npm:^1.0.1":
   version: 1.0.1
   resolution: "@nitra/prettier-config@npm:1.0.1"
   checksum: e058fa97c025f33bd1a75444013f7ce9e4a5f52f7a7837c3b1d1b0c406de1dd1868990270223799b597a860522407702317291221deb48a3bc688cdaf7030495
   languageName: node
   linkType: hard
-
-"@nitra/reassign-owner@workspace:npm":
-  version: 0.0.0-use.local
-  resolution: "@nitra/reassign-owner@workspace:npm"
-  languageName: unknown
-  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
