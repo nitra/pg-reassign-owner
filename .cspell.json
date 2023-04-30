@@ -13,6 +13,9 @@
     "@nitra/cspell-dict/cspell-ext.json"
   ],
   "words": [
-
+    "nspname",
+    "proname",
+    "pronamespace",
+    "rolname"
   ]
 }

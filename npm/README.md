@@ -1,14 +1,30 @@
 # @nitra/reassign-owner
 
+## Reassign all objects in database to new owner
 
-run:
+@nitra/reassign-owner uses the same environment variables as libpq and psql to connect to a PostgreSQL server.
+
+To run and specify which database to connect to we can invoke it like so::
 
 ```bash
-npx @nitra/pg-reassign-owner param1 param2
+PGUSER=dbuser \
+  PGHOST=database.server.com \
+  PGPASSWORD=secretpassword \
+  PGDATABASE=mydb \
+  PGPORT=3211 \
+  npx @nitra/pg-reassign-owner NEW_DB_OWNER
+```
+
+The default values for the environment variables used are:
+
+```bash
+  PGHOST=localhost \
+  PGUSER=process.env.USER \
+  PGDATABASE=process.env.USER \
+  PGPASSWORD=null \
+  PGPORT=5432 \
+  npx @nitra/pg-reassign-owner NEW_DB_OWNER
 ```
 
 original question:
 https://stackoverflow.com/questions/1348126/postgresql-modify-owner-on-all-tables-simultaneously-in-postgresql/2686185#2686185
-
-ansible module:
-https://github.com/ansible-collections/community.postgresql/blob/main/plugins/modules/postgresql_owner.py

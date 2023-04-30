@@ -1,7 +1,7 @@
 {
   "name": "@nitra/pg-reassign-owner",
   "description": "reassign-owner helper",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "bin"
@@ -25,5 +25,8 @@
   },
   "bugs": "https://github.com/nitra/pg-reassign-owner/issues",
   "homepage": "https://github.com/nitra/pg-reassign-owner",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.10.0"
+  }
 }
