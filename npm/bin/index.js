@@ -63,9 +63,7 @@ for (const { command } of functions.rows) {
 }
 console.log(`Functions and trigger functions altered: ${functions.rowCount}`)
 
-await client.end()
-
-// check_role_exists
+await finish('success')
 
 async function finish(message) {
   console.log(message)
