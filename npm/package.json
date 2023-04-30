@@ -1,7 +1,7 @@
 {
   "name": "@nitra/pg-reassign-owner",
   "description": "reassign-owner helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "files": [
     "bin"
