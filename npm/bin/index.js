@@ -18,7 +18,7 @@ console.log('DB altered')
 
 // Tables
 const tables =
-  await client.query(/* sql */ `SELECT 'ALTER TABLE '|| schemaname || '."' || tablename ||'" OWNER TO ${newRole}' as command
+  await client.query(/* sql */ `SELECT 'ALTER TABLE "'|| schemaname || '"."' || tablename ||'" OWNER TO ${newRole}' as command
   FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema')`)
 for (const { command } of tables.rows) {
   await client.query(command)
@@ -27,7 +27,7 @@ console.log(`Tables altered: ${tables.rowCount}`)
 
 // Sequences
 const sequences =
-  await client.query(/* sql */ `SELECT 'ALTER SEQUENCE '|| sequence_schema || '."' || sequence_name ||'" OWNER TO ${newRole};' as command
+  await client.query(/* sql */ `SELECT 'ALTER SEQUENCE "'|| sequence_schema || '"."' || sequence_name ||'" OWNER TO ${newRole};' as command
   FROM information_schema.sequences WHERE NOT sequence_schema IN ('pg_catalog', 'information_schema')`)
 for (const { command } of sequences.rows) {
   await client.query(command)
@@ -36,7 +36,7 @@ console.log(`Sequences altered: ${sequences.rowCount}`)
 
 // Views
 const views =
-  await client.query(/* sql */ `SELECT 'ALTER VIEW '|| table_schema || '."' || table_name ||'" OWNER TO ${newRole};' as command
+  await client.query(/* sql */ `SELECT 'ALTER VIEW "'|| table_schema || '"."' || table_name ||'" OWNER TO ${newRole};' as command
   FROM information_schema.views WHERE NOT table_schema IN ('pg_catalog', 'information_schema')`)
 for (const { command } of views.rows) {
   await client.query(command)
@@ -48,13 +48,13 @@ const schemas = await client.query(
   /* sql */ `SELECT distinct(schemaname) AS schema FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema')`
 )
 for (const { schema } of schemas.rows) {
-  await client.query(`ALTER SCHEMA ${schema} OWNER TO ${newRole};`)
+  await client.query(`ALTER SCHEMA "${schema}" OWNER TO ${newRole};`)
 }
 console.log(`Schemas altered: ${schemas.rowCount}`)
 
 // Functions and trigger functions
 const functions =
-  await client.query(/* sql */ `SELECT 'alter function '||nsp.nspname||'."'||p.proname||'" ('||pg_get_function_identity_arguments(p.oid)||') owner to ${newRole};' as command
+  await client.query(/* sql */ `SELECT 'alter function "'||nsp.nspname||'"."'||p.proname||'" ('||pg_get_function_identity_arguments(p.oid)||') owner to ${newRole};' as command
         FROM pg_proc p
         JOIN pg_namespace nsp ON p.pronamespace = nsp.oid
         WHERE NOT  nsp.nspname IN ('pg_catalog', 'information_schema')`)
